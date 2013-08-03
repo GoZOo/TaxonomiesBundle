@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="rz_taxonomies.admin.taxon" class="%rz_taxonomies.admin.taxon.class%">
+            <tag name="sonata.admin" manager_type="orm" group="Taxonomy" label="Taxon"  label_catalogue="%rz_taxonomies.admin.taxon.translation_domain%" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%rz_taxonomies.admin.taxon.entity%</argument>
+            <argument>%rz_taxonomies.admin.taxon.controller%</argument>
+            <call method="setTranslationDomain">
+                <argument>%rz_taxonomies.admin.taxon.translation_domain%</argument>
+            </call>
+            <call method="setTaxonManager">
+                <argument type="service" id="rz_taxonomies.manager.taxon" />
+            </call>
+
+
+        </service>
+
+        <service id="rz_taxonomies.admin.taxonomy" class="%rz_taxonomies.admin.taxonomy.class%">
+            <tag name="sonata.admin" manager_type="orm" group="Taxonomy" label="Taxonomy"  label_catalogue="%rz_taxonomies.admin.taxon.translation_domain%" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%rz_taxonomies.admin.taxonomy.entity%</argument>
+            <argument>%rz_taxonomies.admin.taxonomy.controller%</argument>
+            <call method="setTranslationDomain">
+                <argument>%rz_taxonomies.admin.taxonomy.translation_domain%</argument>
+            </call>
+
+            <call method="addChild">
+                <argument type="service" id="rz_taxonomies.admin.taxon" />
+            </call>
+
+        </service>
+
+    </services>
+
+</container>

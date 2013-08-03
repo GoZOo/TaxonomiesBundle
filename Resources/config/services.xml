@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <!--
+    <parameters>
+        <parameter key="rz_taxonomies.example.class">Rz\TaxonomiesBundle\Example</parameter>
+    </parameters>
+
+    <services>
+        <service id="rz_taxonomies.example" class="%rz_taxonomies.example.class%">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
+        </service>
+    </services>
+    -->
+
+    <parameters>
+        <parameter key="rz_taxonomies.orm.type.taxon_choice.class">Rz\TaxonomiesBundle\Form\Type\TaxonChoiceType</parameter>
+    </parameters>
+
+    <services>
+        <service id="rz_taxonomies.form.type.taxon_choice" class="%rz_taxonomies.orm.type.taxon_choice.class%">
+            <tag name="form.type" alias="rz_taxonomies_taxon_choice" />
+            <argument type="service" id="rz_taxonomies.manager.taxon" />
+        </service>
+    </services>
+</container>
