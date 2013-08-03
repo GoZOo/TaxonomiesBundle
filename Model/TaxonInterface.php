@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the RzTaxonomiesBundle package.
+ *
+ * (c) mell m. zamora <mell@rzproject.org>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Rz\TaxonomiesBundle\Model;
 
 /**
@@ -10,21 +19,7 @@ namespace Rz\TaxonomiesBundle\Model;
 interface TaxonInterface
 {
 
-//    /**
-//     * Get the taxonomy.
-//     *
-//     * @return TaxonomyInterface
-//     */
-//    public function getTaxonomy();
-//
-//    /**
-//     * Set the taxonomy.
-//     *
-//     * @param null|TaxonomyInterface $taxonomy
-//     */
-//    public function setTaxonomy(TaxonomyInterface $taxonomy = null);
-
-    /**
+/**
      * Is root taxon?
      *
      * @return Boolean

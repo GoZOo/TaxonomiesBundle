@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the RzTaxonomiesBundle package.
+ *
+ * (c) mell m. zamora <mell@rzproject.org>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Rz\TaxonomiesBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
@@ -33,7 +42,7 @@ class TaxonAdmin extends Admin
                       'choice_list' => new SimpleChoiceList($this->getChoices()),
                       'model_manager' => $this->getModelManager(),
                       'class'         => $this->getClass(),
-                      'required'      => false, 
+                      'required'      => false,
                       'current'      => $this->getSubject() ?: null))
             ->add('description', null, array('required' => false))
         ;
