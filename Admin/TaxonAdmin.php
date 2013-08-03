@@ -31,7 +31,7 @@ class TaxonAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-        if($this->getSubject()->isRoot()  &&  !$this->isChild()) {
+        if ($this->getSubject()->isRoot()  &&  !$this->isChild()) {
             $formMapper->add('taxonomy', 'sonata_type_model_list');
         }
 
@@ -59,6 +59,7 @@ class TaxonAdmin extends Admin
         foreach ($taxons as $taxon) {
             $choices[$taxon->getId()] = $taxon;
         }
+
         return $choices;
     }
 
@@ -90,7 +91,7 @@ class TaxonAdmin extends Admin
      */
     public function prePersist($object)
     {
-        if(!$object->isRoot()) {
+        if (!$object->isRoot()) {
             $root = $this->taxonManager->findOneBy(array('id'=>$object->getRoot()));
             $object->setTaxonomy($root->getTaxonomy() ?: null);
         }
@@ -101,13 +102,14 @@ class TaxonAdmin extends Admin
      */
     public function preUpdate($object)
     {
-        if(!$object->isRoot()) {
+        if (!$object->isRoot()) {
             $root = $this->taxonManager->findOneBy(array('id'=>$object->getRoot()));
             $object->setTaxonomy($root->getTaxonomy() ?: null);
         }
     }
 
-    public function setTaxonManager(TaxonManagerInterface $taxonManager) {
+    public function setTaxonManager(TaxonManagerInterface $taxonManager)
+    {
         $this->taxonManager = $taxonManager;
     }
 }

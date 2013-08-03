@@ -20,21 +20,15 @@ class Taxon extends BaseTaxon
 
     protected $left;
 
-
     protected $level;
-
 
     protected $right;
 
-
     protected $root;
-
 
     protected $parent;
 
-
     protected $children;
-
 
     /**
      * The taxonomy of this taxon.

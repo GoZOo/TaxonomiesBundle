@@ -67,12 +67,14 @@ class TaxonManager extends BaseTaxonManager
         $this->em->flush();
     }
 
-    public function fetchTaxons() {
+    public function fetchTaxons()
+    {
         $entityManager = $this->em->getRepository($this->class);
         $query = $entityManager->createQueryBuilder('category')
                  ->orderBy('category.root', 'ASC')
                  ->addOrderBy('category.left', 'ASC')
                  ->getQuery();
+
         return $query->getResult();
     }
 }

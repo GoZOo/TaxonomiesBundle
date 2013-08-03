@@ -17,7 +17,6 @@ use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Rz\TaxonomiesBundle\Model\TaxonManagerInterface;
 
-
 class TaxonChoiceType extends AbstractType
 {
     protected $manager;
