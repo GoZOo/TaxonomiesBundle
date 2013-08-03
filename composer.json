@@ -1,0 +1,29 @@
+{
+    "name": "rz/taxonomies-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 Bundle for creating taxonomies",
+    "keywords": ["symfony2", "RZProject"],
+    "homepage": "https://github.com/rzproject/TaxonomiesBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mell zamora",
+            "email": "mell@rzproject.org",
+            "homepage": "http://www.rzproject.org"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "rmzamora/admin-bundle": "2.3.*@dev",
+        "stof/doctrine-extensions-bundle": "1.1.*"
+    },
+    "autoload": {
+        "psr-0": { "Rz\\TaxonomiesBundle": "" }
+    },
+    "target-dir": "Rz/TaxonomiesBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
